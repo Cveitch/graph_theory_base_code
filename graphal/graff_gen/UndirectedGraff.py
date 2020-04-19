@@ -13,8 +13,8 @@ class UndirectedGraff:
         self.G = nx.Graph()
 
     def build_from_edge_list(self, elist):
-        # elist is an edge list (list of comma delimited edge tuples)
-         self.G = nx.read_edgelist(elist, delimiter=',')
+        # elist is an edge list generated graph (argument is a graph)
+        self.G = nx.read_edgelist(elist)
 
     def build_from_adj_matrix(self, adjmat):
         # adjmat is an adjacency matrix (numpy array)
@@ -24,7 +24,7 @@ class UndirectedGraff:
 
     def build_from_adj_list(self, adjlist):
         # adjlist is an adjacency list (list of comma delimited adjlist tuples)
-        self.G = nx.parse_adjlist(adjlist)
+        self.G = nx.read_adjlist(adjlist)
 
 
 
