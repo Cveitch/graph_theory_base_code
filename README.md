@@ -4,3 +4,22 @@ Code base for graph theory work
 Package designed for research into graphlets and graph complexity algorithms,
 should be general enough for anything beyond that.
 
+##Early notes:
+graphal is intended to be used with white space delimited files.
+There are three types of file that will create a graph using this program:
+1) An edge list,
+    ```
+    a b
+    a c
+    b e
+    b h
+    b c
+    c g
+    e h
+    f g
+    g h
+   ```
+   will produce the following graph:
+   
+   ![Edge list graph](http)
+   

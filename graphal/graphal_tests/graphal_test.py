@@ -11,8 +11,16 @@ import networkx as nx
 
 graf = ugraff.UndirectedGraff()
 
-cgr = csvgr.CSVGraffReader('adj_mat_csv.csv')
 
+
+
+# cgr = csvgr.CSVGraffReader('edge_list_csv.csv')
+# graf.build_from_edge_list(cgr.csv_to_edge_list())
+
+# cgr = csvgr.CSVGraffReader('adj_list_csv.csv')
+# graf.build_from_adj_list(cgr.csv_to_adj_list())
+
+cgr = csvgr.CSVGraffReader('adj_mat_csv.csv')
 graf.build_from_adj_matrix(cgr.csv_to_adj_matrix())
 
 nx.draw(graf.G, node_size=500, with_labels=True)
