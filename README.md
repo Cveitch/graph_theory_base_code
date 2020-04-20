@@ -21,5 +21,5 @@ There are three types of file that will create a graph using this program:
    ```
    will produce the following graph:
    
-   ![Edge list graph](http)
+   ![Edge list graph](https://github.com/Cveitch/graph_theory_base_code/blob/master/graphal/graphal_tests/adj_matrix_graph_example.png)
    
