@@ -39,5 +39,5 @@ print(grflt.get_node_orbit(4))
 
 
 
-#nx.draw(graf.G, node_size=500, with_labels=True)
-#plt.show()
+nx.draw(graf.G, node_size=500, with_labels=True)
+plt.show()
