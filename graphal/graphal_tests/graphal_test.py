@@ -10,7 +10,7 @@ import graphal.graff_gen.UndirectedGraff as ugraff
 import matplotlib.pyplot as plt
 import networkx as nx
 import graphal.grafflet_gen.GraffletCounter as gcounter
-import graphal.grafflet_gen.Grafflet as graphlet
+import graphal.grafflet_gen.Grafflet as grflt
 
 
 graf = ugraff.UndirectedGraff()
@@ -33,11 +33,17 @@ print(gcount.grafflet_count)
 #print(gcounter.count_n_graphlets(3))
 
 
-grflt = graphlet.Grafflet(27)
-print(grflt.get_node_orbit(4))
+graflet = grflt.Grafflet(27)
 
+print(gcount.orbit_counts, sep="\n")
 
+#print(*gcount.orbit_counts, sep="\n")
+#print(graflet.get_node_orbit(4))
 
+#This is how we get nodes from graffs
+#print(list(graf.G.nodes())[8])
+
+#graf.G.degree[0]
 
 nx.draw(graf.G, node_size=500, with_labels=True)
 plt.show()
