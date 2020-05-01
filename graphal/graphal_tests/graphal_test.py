@@ -4,11 +4,14 @@
 # Description: Test cases for graphal project.
 #
 
+
 import graphal.graff_gen.CSVGraffReader as csvgr
 import graphal.graff_gen.UndirectedGraff as ugraff
 import matplotlib.pyplot as plt
 import networkx as nx
-import graphal.graphlets.GraphletCounter as graphlet
+import graphal.grafflet_gen.GraffletCounter as gcounter
+import graphal.grafflet_gen.Grafflet as graphlet
+
 
 graf = ugraff.UndirectedGraff()
 
@@ -24,11 +27,17 @@ graf.build_from_adj_list(cgr.csv_to_adj_list())
 #cgr = csvgr.CSVGraffReader('adj_mat_csv.csv')
 #graf.build_from_adj_matrix(cgr.csv_to_adj_matrix())
 
-gcounter = graphlet.GraphletCounter(graf.G)
-print(gcounter.count_n_graphlets(5))
+gcount = gcounter.GraffletCounter(graf.G, 3)
+print(*gcount.grafflet_edges, sep="\n")
+print(gcount.grafflet_count)
+#print(gcounter.count_n_graphlets(3))
+
+
+grflt = graphlet.Grafflet(27)
+print(grflt.get_node_orbit(4))
 
 
 
 
-nx.draw(graf.G, node_size=500, with_labels=True)
-plt.show()
+#nx.draw(graf.G, node_size=500, with_labels=True)
+#plt.show()
