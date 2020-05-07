@@ -4,19 +4,26 @@
 # Description: Creates 3, 4, or 5 node grafflet_gen
 #
 
-import graphal.grafflet_gen.Grafflet as grflt
+import graffal.grafflet_gen.Grafflet as grflt
 
 
 class GraffletCollection:
     def __init__(self, n):
-        if n < 3 or n > 5:
+        if n < 2 or n > 5:
             exit("Invalid Graphlet Node Count")
+        if n == 2:
+            self.g_list = self.gen_2_grafflets()
         if n == 3:
             self.g_list = self.gen_3_grafflets()
         elif n == 4:
             self.g_list = self.gen_4_grafflets()
         elif n == 5:
             self.g_list = self.gen_5_grafflets()
+
+    def gen_2_grafflets(self):
+        g0 = grflt.Grafflet(0)
+        grafflets = [g0]
+        return grafflets
 
     def gen_3_grafflets(self):
         # Returns an array with all possible 3-node grafflet_gen

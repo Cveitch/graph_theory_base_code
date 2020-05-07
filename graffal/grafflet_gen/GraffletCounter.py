@@ -6,14 +6,14 @@
 #
 
 from tqdm import tqdm
-import graphal.grafflet_gen.GraffletCollection as graffcol
+import graffal.grafflet_gen.GraffletCollection as graffcol
 import networkx as nx
 import itertools
 
 class GraffletCounter:
     def __init__(self, graff_name, nodes):
         self.my_graff = graff_name
-        self.grafflet_count, self.grafflet_edges = self.count_n_grafflets(nodes)
+        self.grafflet_count, self.grafflet_edges, self.grafflet_freq = self.count_n_grafflets(nodes)
         self.orbit_counts = self.count_orbits(nodes)
 
     def update_graff(self, new_graff):
@@ -22,15 +22,20 @@ class GraffletCounter:
     def count_n_grafflets(self, n):
         # How many n-grafflets from graph my_graff.
         grafflets = graffcol.GraffletCollection(n).g_list
+        grafflet_frequency = {}
         grafflet_count = 0
         graff_edges = []
-        for x in tqdm(range(len(grafflets)), desc="Counting Graphlets"):
+        node = 0
+        for x in tqdm(range(len(grafflets)), desc="Counting "+str(n)+"-node Graphlets"):
+            grafflet_frequency[grafflets[x].graphlet_enum] = 0
             for s_nodes in itertools.combinations(self.my_graff.nodes(), len(grafflets[x].G.nodes())):
                 s_g = self.my_graff.subgraph(s_nodes)
                 if nx.is_connected(s_g) and nx.is_isomorphic(s_g, grafflets[x].G):
                     graff_edges.append(s_g.nodes)
                     grafflet_count += 1
-        return grafflet_count, graff_edges
+                    grafflet_frequency[grafflets[x].graphlet_enum] += 1
+            node += 1
+        return grafflet_count, graff_edges, grafflet_frequency
 
     def count_orbits(self, n):
         orbs = {}
@@ -51,8 +56,6 @@ class GraffletCounter:
                             orbs[gnode].append(node_orb)
                         else:
                             orbs[gnode] = [node_orb]
-
-                        #orbs.append(node_orb)
         return orbs
 
 

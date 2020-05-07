@@ -13,6 +13,7 @@ class Grafflet:
         if g_num < 1 or g_num > 29:
             exit("Invalid Graphlet Enumeration")
         self.G = self.gen_grafflet(g_num)
+        self.graphlet_enum = g_num
 
     def get_node_orbit(self, n):
         orb = self.G.nodes[n]['orbit']
@@ -20,6 +21,10 @@ class Grafflet:
 
     def gen_grafflet(self, n):
         g = nx.Graph()
+        # Three node graphlets
+        if n == 0:
+            g.add_edge(1, 2)
+            orb = {1: 0, 2: 0}
         # Three node graphlets
         if n == 1:
             g.add_edge(1, 2)
