@@ -10,7 +10,7 @@ import networkx as nx
 
 class Grafflet:
     def __init__(self, g_num):
-        if g_num < 1 or g_num > 29:
+        if g_num < 0 or g_num > 29:
             exit("Invalid Graphlet Enumeration")
         self.G = self.gen_grafflet(g_num)
         self.graphlet_enum = g_num

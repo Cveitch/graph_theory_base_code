@@ -10,6 +10,7 @@ import graffal.grafflet_gen.GraffletCollection as graffcol
 import networkx as nx
 import itertools
 
+
 class GraffletCounter:
     def __init__(self, graff_name, nodes):
         self.my_graff = graff_name
@@ -18,6 +19,8 @@ class GraffletCounter:
 
     def update_graff(self, new_graff):
         self.my_graff = new_graff
+        self.grafflet_count, self.grafflet_edges, self.grafflet_freq = self.count_n_grafflets(nodes)
+        self.orbit_counts = self.count_orbits(nodes)
 
     def count_n_grafflets(self, n):
         # How many n-grafflets from graph my_graff.
@@ -48,18 +51,10 @@ class GraffletCounter:
                     grafflets_d = dict(grafflets[x].G.degree)
                     for gnode in s_g_d:
                         node_orb = []
+                        if gnode not in orbs:
+                            orbs[gnode] = node_orb
                         for gletnode in grafflets_d:
                             if s_g_d[gnode] == grafflets_d[gletnode]:
-                                node_orb.append(grafflets[x].get_node_orbit(gletnode))
+                                orbs[gnode].append(grafflets[x].get_node_orbit(gletnode))
                                 break
-                        if gnode in orbs:
-                            orbs[gnode].append(node_orb)
-                        else:
-                            orbs[gnode] = [node_orb]
         return orbs
-
-
-
-
-    orbs = {}
-
