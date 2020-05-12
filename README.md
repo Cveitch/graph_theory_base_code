@@ -73,3 +73,33 @@ node of G takes part in.
 Measures to gauge the complexity of a graph are widespread and varied.
 Graffal implements the following measures of complexity:
 
+- **The Vertex Degree Information Measure**
+
+    Measure based on each nodes vertex degree.
+    
+- **The Complexity B Measure**
+
+    Measure based on the proportion of vertex degree to inter-node distance row and column totals.
+    
+- **The Graph Distance Complexity Measure**
+
+    Measure based on the weighted sum of vertex distance complexities of individual nodes.
+    
+- **The Total Walk Count**
+
+    Measures the total number of all k-walks, k-1 walks, ... 1-walks.
+    
+### Graphlet Complexity Measures
+The following measures gauge the complexity of a graph by using information derived from its graphlets.
+
+- **Graphlet Frequency Information**
+
+    Measure based on the frequency counts of the graphlets.
+    
+- **Graphlet Orbit Distribution Information**
+
+    Measure based on the counts of nodes in all possible graphlet automorphism orbits.
+    
+- **Local Node Complexity Measure**
+
+    Evaluates the complexity of a graph by measuring the complexity of each of it's nodes orbit diversity.
