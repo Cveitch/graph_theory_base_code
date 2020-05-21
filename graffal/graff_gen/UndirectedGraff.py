@@ -9,8 +9,10 @@ import numpy as np
 
 
 class UndirectedGraff:
+
     def __init__(self):
         self.G = nx.Graph()
+        self.adj_matrix = None
 
     def build_from_edge_list(self, elist):
         # elist is an edge list generated graph (argument is a graph)
@@ -26,6 +28,5 @@ class UndirectedGraff:
         # adjlist is an adjacency list (list of comma delimited adjlist tuples)
         self.G = nx.read_adjlist(adjlist)
 
-
-
-
+    def build_adj_matrix(self):
+        self.adj_matrix = nx.to_numpy_matrix(self.G)

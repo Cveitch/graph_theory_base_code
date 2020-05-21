@@ -21,7 +21,7 @@ There are three types of file that will create a graph using this program:
    ```
    will produce the following graph:
    
-   ![Edge list graph](https://github.com/Cveitch/graph_theory_base_code/blob/master/graffal/graffal_tests/edge_list_graph_example.png)
+   ![Edge list graph](https://github.com/Cveitch/graph_theory_base_code/blob/master/graffal/documentation/assets/edge_list_graph_example.png)
    
 2) An adjacency list,
     ```
@@ -37,7 +37,7 @@ There are three types of file that will create a graph using this program:
     ```
    will produce the following graph:
    
-   ![Edge list graph](https://github.com/Cveitch/graph_theory_base_code/blob/master/graffal/graffal_tests/adj_list_graph_example.png)
+   ![Edge list graph](https://github.com/Cveitch/graph_theory_base_code/blob/master/graffal/documentation/assets/adj_list_graph_example.png)
    
    3) Or an adjacency matrix,
     ```
@@ -49,7 +49,7 @@ There are three types of file that will create a graph using this program:
     ```
    will produce the following graph:
    
-   ![Edge list graph](https://github.com/Cveitch/graph_theory_base_code/blob/master/graffal/graffal_tests/adj_matrix_graph_example.png)
+   ![Edge list graph](https://github.com/Cveitch/graph_theory_base_code/blob/master/graffal/documentation/assets/adj_matrix_graph_example.png)
    
 Graffal can write these visualizations to file - the file name and extension
 type is up to the user.  Default name is temp, default extension is .png.

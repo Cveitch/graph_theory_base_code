@@ -7,7 +7,7 @@
 import graffal.graff_gen.GraffWrapper as gmake
 import graffal.grafflet_gen.GraffletWrapper as gwrap
 import graffal.complexity.ComplexityMeasurer as comeas
-
+import networkx as nx
 
 def print_edgelist():
     print("Graphlets edge list:")
@@ -25,9 +25,9 @@ def print_graphlet_frequency():
 
 
 def print_node_orbits():
-    for node, orb in gwrapper.get_orbit_counts().items():
-        print("Node", node, "has orbits:", orb)
-
+    lcm = G.get_nodes('orbit_count')
+    for node in G.get_graff():
+        print("Node", node, "has orbits:", lcm[node])
 
 def print_vertex_degree_info_measure():
     vdim = comeas.vertex_degree_info_measure(G.get_graff())
@@ -40,14 +40,13 @@ def print_frequency_info_sdm():
 
 
 def print_orbit_distribution_info_sdm():
-    sdm = comeas.orbit_distribution_info_sdm(gwrapper.get_orbit_counts())
+    sdm = comeas.orbit_distribution_info_sdm(G.get_nodes('orbit_count'))
     print("Orbit Distribution Information measure is ", sdm)
 
 
 def print_local_complexity_measure():
-    lcm = comeas.local_complexity_measure(gwrapper.get_orbit_counts())
-    for node in lcm:
-        print("Local Complexity Measure of node", node, "is:", lcm[node])
+    for node in G.get_nodes('node_complexity'):
+        print("Local Complexity Measure of node", node, "is:", G.get_nodes('node_complexity')[node])
 
 
 def print_complexity_b():
@@ -64,34 +63,43 @@ def print_total_walk_count(n):
 
 def get_test_graph(k):
     if k == 1:
-        cgr = "adj_list_csv.csv"
-        G = gmake.GraffWrapper(cgr, 2)
+        cgr = "test_data/adj_list_csv.csv"
+        g = gmake.GraffWrapper(cgr, 2)
     if k == 2:
-        cgr = "edge_list_csv.csv"
-        G = gmake.GraffWrapper(cgr, 1)
+        cgr = "test_data/edge_list_csv.csv"
+        g = gmake.GraffWrapper(cgr, 1)
     if k == 3:
-        cgr = "adj_mat_csv.csv"
-        G = gmake.GraffWrapper(cgr, 3)
+        cgr = "test_data/adj_mat_csv.csv"
+        g = gmake.GraffWrapper(cgr, 3)
     if k == 4:
-        cgr = "test_edge.csv"
-        G = gmake.GraffWrapper(cgr, 1)
-    return G
+        cgr = "test_data/test_edge.csv"
+        g = gmake.GraffWrapper(cgr, 1)
+    return g
 
-G = get_test_graph(1)
-#gwrapper = gwrap.GraphletWrapper(G.get_graff(), 1)
+
+def generate_nlc():
+    lcm = comeas.local_complexity_measure(G.get_nodes('orbit_count'))
+    G.set_nodes(lcm, 'node_complexity')
+
+
+
+
+G = get_test_graph(4)
+gwrapper = gwrap.GraphletWrapper(G.get_graff(), 2)
+generate_nlc()
 
 #print_edgelist()
-#print_node_orbits()
+print_node_orbits()
 #print_total_graphlets()
 #print_graphlet_frequency()
 
-#print_frequency_info_sdm()
-#print_orbit_distribution_info_sdm()
-#print_vertex_degree_info_measure()
-#print_complexity_b()
-#print_local_complexity_measure()
-#print_graph_distance_complexity()
+print_frequency_info_sdm()
+print_orbit_distribution_info_sdm()
+print_vertex_degree_info_measure()
+print_complexity_b()
+print_local_complexity_measure()
+print_graph_distance_complexity()
 print_total_walk_count(4)
 
-G.draw_graff()
-
+G.draw_graff(nsize=500, spec=True, colmap=True, grou='node_complexity')
+#G.save_graff()

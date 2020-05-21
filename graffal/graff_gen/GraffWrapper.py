@@ -8,6 +8,7 @@
 import graffal.graff_gen.CSVGraffReader as csvgr
 import graffal.graff_gen.UndirectedGraff as ugraff
 import graffal.graff_gen.GraffWriter as gwriter
+import networkx as nx
 
 
 class GraffWrapper:
@@ -22,13 +23,24 @@ class GraffWrapper:
             self.graf.build_from_adj_list(cgr.csv_to_adj_list())
         elif option == 3:
             self.graf.build_from_adj_matrix(cgr.csv_to_adj_matrix())
+        self.graf.build_adj_matrix()
         self.gwrite = gwriter.GraffWriter(self.graf)
 
     def get_graff(self):
         return self.graf.G
 
-    def draw_graff(self):
-        self.gwrite.plot_graff()
+    def set_nodes(self, ndict, key):
+        nx.set_node_attributes(self.graf.G, ndict, key)
+
+    def get_nodes(self, key):
+        return nx.get_node_attributes(self.graf.G, key)
+
+    def get_adj_matrix(self):
+        return self.graf.adj_matrix
+
+    def draw_graff(self, nsize=500, spec=True, colmap=True, grou=None):
+        self.gwrite.plot_graff(nsize, spectral=spec, colourmap=colmap, group=grou)
+        #self.gwrite.update_graff_writer_colourmap('node_complexity')
 
     def save_graff(self, file_name="temp_graff", file_ext="png"):
         self.gwrite.graff_to_file(file_name, file_ext)

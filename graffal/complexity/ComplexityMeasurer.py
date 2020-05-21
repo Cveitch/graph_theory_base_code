@@ -8,8 +8,9 @@
 
 import math
 import networkx as nx
-import itertools
-from collections import Counter
+import numpy
+
+from tqdm import tqdm
 
 
 def vertex_degree_info_measure(graff):
@@ -40,19 +41,65 @@ def complexity_b(graff):
     return b
 
 
-def graph_distance_complexity(graff, k):
+# Graph Distance Complexity has been broken into multiple functions for clarity.
+def graph_distance_complexity(graff):
+    cdg = 0
+    ev = nx.eccentricity(graff)
+    nkv = gdc_get_nkv(graff)
+    rvi = {}
+    rg = 0
 
-    return 0
+    for node in graff:
+        rvi[node] = gdc_weighted_sum(nkv[node], ev[node])
+        rg += gdc_weighted_sum(nkv[node], ev[node])
+    for node in graff:
+        vd = gdc_vertex_distance_comp(nkv[node], ev[node])
+        cdg += (rvi[node] / rg) * vd
+    return (-1) * cdg
 
 
-def total_walk_count(self):
-    return 0
+def gdc_get_nkv(graff):
+    radius_graph = {}
+    for node in graff:
+        rgi = nx.ego_graph(graff, node)
+        radius_graph[node] = rgi.number_of_nodes()
+    return radius_graph
+
+
+def gdc_weighted_sum(nkv, ev):
+    # nkv is the number of nodes within distance k of a given node,
+    # ev is max distance from node to any other node
+    rv = 0
+    for k in range(1, ev+1):
+        rv += k * nkv
+    return rv
+
+
+def gdc_vertex_distance_comp(nkv, ev):
+    vd = 0
+    for k in range(1, ev+1):
+        rv = gdc_weighted_sum(nkv, ev)
+        vd += nkv * (k / rv) * math.log2(k/rv)
+    return vd
+
+
+def total_walk_count(adj_mat, big_k):
+    twc = 0
+    n = adj_mat.shape[0]
+    for k in range(1, big_k+1):
+        adjm = numpy.linalg.matrix_power(adj_mat, k)
+        for i in range(0, n):
+            for j in range(0, n):
+                twc += adjm[i, j]
+    return twc
 
 
 def topological_info_complexity(self):
+    # Unlikely to be implemented - no polynomial time algorithm exists.
     return 0
 
 
+# Both Frequency Information and Orbital Distribution measures implement the Shannon Diversity Measure.
 def frequency_info_sdm(freq):
     total_freq = 0
     hgf = 0
