@@ -84,7 +84,17 @@ def generate_nlc():
 
 
 
-G = get_test_graph(4)
+G = get_test_graph(1)
+
+#er = nx.erdos_renyi_graph(30, 0.1)
+#G.set_new_graff(er)
+
+#ws = nx.watts_strogatz_graph(10, 4, 0.2)
+#G.set_new_graff(ws)
+
+#ba = nx.barabasi_albert_graph(10, 2)
+#G.set_new_graff(ba)
+
 gwrapper = gwrap.GraphletWrapper(G.get_graff(), 2)
 generate_nlc()
 
@@ -101,5 +111,5 @@ print_local_complexity_measure()
 print_graph_distance_complexity()
 print_total_walk_count(4)
 
-G.draw_graff(nsize=500, spec=True, colmap=True, grou='node_complexity')
+G.draw_graff(nsize=300, spec=False, colmap=True, grou='node_complexity', nodelabel=True)
 #G.save_graff()
