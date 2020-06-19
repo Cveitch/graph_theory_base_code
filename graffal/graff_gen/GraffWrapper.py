@@ -30,6 +30,9 @@ class GraffWrapper:
     def get_graff(self):
         return self.graf.G
 
+    def get_edges(self):
+        return self.graf.G.edges
+
     def set_new_graff(self, g):
         self.graf.G = g
         self.graf.build_adj_matrix()
@@ -48,5 +51,16 @@ class GraffWrapper:
         self.gwrite.plot_graff(nsize, spectral=spec, colourmap=colmap, group=grou, nodlabel=nodelabel)
         #self.gwrite.update_graff_writer_colourmap('node_complexity')
 
-    def save_graff(self, file_name="temp_graff", file_ext="png"):
-        self.gwrite.graff_to_file(file_name, file_ext)
+    def graff_update(self):
+        self.gwrite.clear_graff_writer()
+
+    def show_graff(self):
+        self.gwrite.live_plot()
+
+    def save_diversity_graph(self, richness, nlc, x="x", y="y", filename="temp"):
+        self.gwrite.diversity_graphs(richness, nlc, file_name=filename, xl=x, yl=y)
+
+    def save_graff(self, nsize, spec=True, colmap=True, grou=None, nodelabel=True,
+                   file_name="temp_graff", file_ext="png"):
+        self.gwrite.plot_graff(nsize, spectral=spec, colourmap=colmap, group=grou, nodlabel=nodelabel)
+        self.gwrite.graff_to_file(nsize, file_name=file_name, file_ext=file_ext)

@@ -14,12 +14,12 @@ import itertools
 class GraffletCounter:
     def __init__(self, graff_name, nodes):
         self.my_graff = graff_name
-        self.grafflet_count, self.grafflet_edges, self.grafflet_freq = self.count_n_grafflets(nodes)
+        self.grafflet_count, self.grafflet_edges, self.grafflet_freq, self.node_freq = self.count_n_grafflets(nodes)
         self.orbit_counts = self.count_orbits(nodes)
 
     def update_graff(self, new_graff):
         self.my_graff = new_graff
-        self.grafflet_count, self.grafflet_edges, self.grafflet_freq = self.count_n_grafflets(nodes)
+        self.grafflet_count, self.grafflet_edges, self.grafflet_freq, self.node_freq = self.count_n_grafflets(nodes)
         self.orbit_counts = self.count_orbits(nodes)
 
     def count_n_grafflets(self, n):
@@ -28,7 +28,8 @@ class GraffletCounter:
         grafflet_frequency = {}
         grafflet_count = 0
         graff_edges = []
-        node = 0
+        node_frequency = {}
+        #node = 0
         for x in tqdm(range(len(grafflets)), desc="Counting "+str(n)+"-node Graphlets"):
             grafflet_frequency[grafflets[x].graphlet_enum] = 0
             for s_nodes in itertools.combinations(self.my_graff.nodes(), len(grafflets[x].G.nodes())):
@@ -37,8 +38,14 @@ class GraffletCounter:
                     graff_edges.append(s_g.nodes)
                     grafflet_count += 1
                     grafflet_frequency[grafflets[x].graphlet_enum] += 1
-            node += 1
-        return grafflet_count, graff_edges, grafflet_frequency
+                    for node in self.my_graff.nodes():
+                        if node in s_g:
+                            if node not in node_frequency:
+                                node_frequency[node] = 1
+                            elif node in node_frequency:
+                                node_frequency[node] += 1
+            #node += 1
+        return grafflet_count, graff_edges, grafflet_frequency, node_frequency
 
     def count_orbits(self, n):
         orbs = {}

@@ -133,6 +133,28 @@ def orbit_distribution_info_sdm(orbits):
     return (-1) * hgd
 
 
+def node_richness_measure(orbits):
+    richness = {}
+    for node in orbits:
+        #for orb in node:
+        orbset = set(orbits[node])
+        num_orbits = len(orbset)
+        richness[node] = num_orbits
+    return richness
+
+def node_orbit_relative_proportion(orbits):
+    richness = node_richness_measure(orbits)
+    orp = {}
+    for node in richness:
+        orp[node] = 0
+        totorb = 0
+        for n in richness:
+            if richness[node] == richness[n]:
+                totorb += 1
+        orp[node] = totorb / richness[node]
+    return orp
+
+
 def local_complexity_measure(orbits):
     h_gam = {}
     orbit_counts = {}

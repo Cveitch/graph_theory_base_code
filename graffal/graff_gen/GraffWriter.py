@@ -15,6 +15,12 @@ class GraffWriter:
         self.my_graff = graff_name
         self.my_spectral_graff = nx.spectral_layout(self.my_graff.G)
 
+    def clear_graff_writer(self):
+        plt.clf()
+
+    def live_plot(self):
+        plt.show()
+
     def update_graff_writer(self, option, nsize):
         plt.clf()
         if option == 0:
@@ -40,7 +46,6 @@ class GraffWriter:
             lc = nx.draw_networkx_labels(self.my_graff.G, pos)
         plt.colorbar(nc)
         plt.axis('off')
-        plt.show()
 
     def plot_graff(self, nsize, spectral=True, colourmap=False, group=None, nodlabel=True):
         if colourmap:
@@ -50,16 +55,28 @@ class GraffWriter:
                 self.update_graff_writer(1, nsize)
             else:
                 self.update_graff_writer(0, nsize)
-        plt.show()
-
-    # def plot_spectral_graff(self, nsize):
-    #     self.update_graff_writer(1, nsize)
 
     def graff_to_file(self, nsize, spectral=True, file_name="temp_graff", file_ext="png"):
-        # Saves graph visualization to graffal/graffal_tests/
-        if spectral:
-            self.update_graff_writer(1, nsize)
-        else:
-            self.update_graff_writer(0, nsize)
-        fname = "../graffal_tests/"+file_name+"."+file_ext
+        # Saves graph visualization to graffal/graffal_tests/saved
+        fname = "../graffal_tests/saved/"+file_name+"."+file_ext
+        plt.savefig(fname)
+
+    def diversity_graphs(self, xcoord, ycoord, xl="x", yl="y", file_name="temp", file_ext="png"):
+        coords = {}
+        for node in xcoord:
+            coords[node] = [xcoord[node], ycoord[node]]
+        xs, ys = zip(*coords.values())
+        labels = coords.keys()
+
+        # plt.figure(figsize=(10, 8))
+        # plt.title('Scatter Plot', fontsize=15)
+        plt.xlabel(xl, fontsize=15)
+        plt.ylabel(yl, fontsize=15)
+        plt.scatter(xs, ys, marker='o')
+
+        # add labels
+        for label, x, y in zip(labels, xs, ys):
+            plt.annotate(label, xy=(x, y))
+
+        fname = "../graffal_tests/saved/" + file_name + "." + file_ext
         plt.savefig(fname)
