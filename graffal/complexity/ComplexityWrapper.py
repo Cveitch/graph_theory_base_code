@@ -42,6 +42,9 @@ class ComplexityWrapper:
         self.cB_measure = comeas.complexity_b(self.G.get_graff())
         self.gdc_measure = comeas.graph_distance_complexity(self.G.get_graff())
         self.node_complexity = self.G.set_nodes(self.nlc_measure, 'node_complexity')
+        self.proportional_richness = comeas.total_richness_proportion(self.G.get_nodes('orbit_count'))
+        self.node_average_richness = comeas.node_average_richness(self.node_orbits, self.G.get_graff(), self.get_node_richness(),1)
+        #nx.set_node_attributes(self.G.get_graff),
 
     def get_total_walk_count(self):
         return self.total_walk_count
@@ -81,6 +84,12 @@ class ComplexityWrapper:
 
     def get_node_orp(self):
         return self.orp
+
+    def get_global_richness_proportion(self):
+        return self.proportional_richness
+
+    def get_node_average_richness(self):
+        return self.node_average_richness
 
     def print_edgelist(self):
         print("Graphlets edge list:")
@@ -180,9 +189,20 @@ class ComplexityWrapper:
             f.write("The richness of node {} is {}.\n".format(node, self.get_node_richness()[node]))
         f.write("\n\n")
 
+        f.write("Node Richness:\n\n")
+        for node in self.get_node_average_richness():
+            f.write("The average richness of node {} with its first order neighbours is {}.\n".format(node,
+                                                                                        self.get_node_average_richness()[node]))
+        f.write("\n\n")
+
         f.write("Node Diversity:\n\n")
         for node in self.get_nlc_measure():
             f.write("The diversity of node {} is {}.\n".format(node, self.get_nlc_measure()[node]))
+        f.write("\n\n")
+
+        f.write("Global Richness Proportion:\n\n")
+        for x in self.get_global_richness_proportion():
+            f.write("The number of nodes with a richness of {} is {}.\n".format(x, self.get_global_richness_proportion()[x]))
         f.write("\n\n")
 
         f.write("The Orbit Distribution Information measure of {} is {}.".format(file_name, self.get_odisd_measure()))

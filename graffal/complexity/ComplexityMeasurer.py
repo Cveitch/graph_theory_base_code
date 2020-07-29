@@ -173,3 +173,42 @@ def local_complexity_measure(orbits):
     for nodes in orbits:
         h_gam[nodes] *= (-1)
     return h_gam
+
+
+def total_richness_proportion(orbits):
+    richness = node_richness_measure(orbits)
+    global_richness = []
+    richness_proportion = {}
+    for x in richness:
+        if richness[x] not in global_richness:
+            global_richness.append(richness[x])
+    global_richness.sort()
+    for x in global_richness:
+        for y in richness:
+            if x == richness[y]:
+                if x not in richness_proportion:
+                    richness_proportion[x] = 1
+                else:
+                    richness_proportion[x] += 1
+        richness_proportion[x] /= len(richness)
+    return richness_proportion
+
+
+def node_average_richness(orbits, graff, node_richness, n):
+    richness = {}
+    for node in orbits:
+        # for orb in node:
+        orbset = set(orbits[node])
+        num_orbits = len(orbset)
+        richness[node] = num_orbits
+
+    average_richness = {}
+
+    for node in graff:
+        aver = node_richness[node]
+        numNeigh = 1
+        for neighbor in graff.neighbors(node):
+            aver += node_richness[neighbor]
+            numNeigh += 1
+        average_richness[node] = aver / numNeigh
+    return average_richness

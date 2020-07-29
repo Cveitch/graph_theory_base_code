@@ -61,10 +61,11 @@ class GraffWriter:
         fname = "../graffal_tests/saved/"+file_name+"."+file_ext
         plt.savefig(fname)
 
-    def diversity_graphs(self, xcoord, ycoord, xl="x", yl="y", file_name="temp", file_ext="png"):
+    def diversity_graphs(self, xcoord, ycoord, xax=None, yax=None, xl="x", yl="y", file_name="temp", file_ext="png"):
         coords = {}
         for node in xcoord:
             coords[node] = [xcoord[node], ycoord[node]]
+            print(xcoord[node], ycoord[node])
         xs, ys = zip(*coords.values())
         labels = coords.keys()
 
@@ -73,6 +74,69 @@ class GraffWriter:
         plt.xlabel(xl, fontsize=15)
         plt.ylabel(yl, fontsize=15)
         plt.scatter(xs, ys, marker='o')
+
+        if xax is not None:
+            plt.xlim(xax[0], xax[1])
+        if yax is not None:
+            plt.ylim(yax[0], yax[1])
+
+        # add labels
+        for label, x, y in zip(labels, xs, ys):
+            plt.annotate(label, xy=(x, y))
+
+        fname = "../graffal_tests/saved/" + file_name + "." + file_ext
+        plt.savefig(fname)
+
+    def dictionary_keyed_graph(self, grp, xax=None, yax=None, xl="x", yl="y", file_name="temp", file_ext="png"):
+        coords = {}
+        for node in grp:
+            coords[node] = [node, grp[node]]
+        xs, ys = zip(*coords.values())
+        labels = coords.keys()
+
+        # plt.figure(figsize=(10, 8))
+        # plt.title('Scatter Plot', fontsize=15)
+        plt.xlabel(xl, fontsize=15)
+        plt.ylabel(yl, fontsize=15)
+        plt.scatter(xs, ys, marker='o')
+        if xax is not None:
+            plt.xlim(xax[0], xax[1])
+        if yax is not None:
+            plt.ylim(yax[0], yax[1])
+        # add labels
+        # for label, x, y in zip(labels, xs, ys):
+        #     plt.annotate(label, xy=(x, y))
+
+        fname = "../graffal_tests/saved/" + file_name + "." + file_ext
+        plt.savefig(fname)
+
+
+
+    def diversity_graph_colourmap(self, xcoord, ycoord, group, xax=None, yax=None, xl="x", yl="y", file_name="temp", file_ext="png"):
+        groups = nx.get_node_attributes(self.my_graff.G, group).values()
+        nods = self.my_graff.G.nodes()
+        colours = list(groups)
+
+        coords = {}
+        for node in xcoord:
+            coords[node] = [xcoord[node], ycoord[node]]
+            print(xcoord[node], ycoord[node])
+        xs, ys = zip(*coords.values())
+        labels = coords.keys()
+
+        # plt.figure(figsize=(10, 8))
+        # plt.title('Scatter Plot', fontsize=15)
+        plt.xlabel(xl, fontsize=15)
+        plt.ylabel(yl, fontsize=15)
+        plt.scatter(xs, ys, c=colours, cmap=plt.cm.rainbow, marker='o')
+
+        cbar = plt.colorbar()
+        cbar.set_label(group)
+
+        if xax is not None:
+            plt.xlim(xax[0], xax[1])
+        if yax is not None:
+            plt.ylim(yax[0], yax[1])
 
         # add labels
         for label, x, y in zip(labels, xs, ys):

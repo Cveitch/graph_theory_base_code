@@ -57,10 +57,16 @@ class GraffWrapper:
     def show_graff(self):
         self.gwrite.live_plot()
 
-    def save_diversity_graph(self, richness, nlc, x="x", y="y", filename="temp"):
-        self.gwrite.diversity_graphs(richness, nlc, file_name=filename, xl=x, yl=y)
+    def save_diversity_graph(self, richness, nlc, xa=None, ya=None, x="x", y="y", filename="temp"):
+        self.gwrite.diversity_graphs(richness, nlc, xax=xa, yax=ya, file_name=filename, xl=x, yl=y)
+
+    def save_dict_keyed_graph(self, grp, xa=None, ya=None, x="x", y="y", filename="temp", file_ext="png"):
+        self.gwrite.dictionary_keyed_graph(grp, xax=xa, yax=ya, xl=x, yl=y, file_name=filename, file_ext=file_ext)
 
     def save_graff(self, nsize, spec=True, colmap=True, grou=None, nodelabel=True,
                    file_name="temp_graff", file_ext="png"):
         self.gwrite.plot_graff(nsize, spectral=spec, colourmap=colmap, group=grou, nodlabel=nodelabel)
         self.gwrite.graff_to_file(nsize, file_name=file_name, file_ext=file_ext)
+
+    def save_diversity_colourmap_graph(self, richness, nlc, group, xa=None, ya=None, x="x", y="y", filename="temp"):
+        self.gwrite.diversity_graph_colourmap(richness, nlc, group, xax=xa, yax=ya, file_name=filename, xl=x, yl=y)

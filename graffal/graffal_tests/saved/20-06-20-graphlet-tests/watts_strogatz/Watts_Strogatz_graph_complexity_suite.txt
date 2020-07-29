@@ -1,0 +1,419 @@
+The edge list for Watts_Strogatz_graph is:
+
+(0, 1), (0, 49), (0, 2), (0, 22), (1, 2), 
+(1, 3), (1, 49), (2, 3), (2, 28), (3, 4), 
+(3, 5), (3, 23), (4, 5), (4, 6), (4, 18), 
+(5, 7), (5, 37), (6, 7), (6, 8), (7, 8), 
+(7, 9), (8, 10), (8, 40), (9, 10), (9, 11), 
+(10, 11), (10, 12), (11, 12), (11, 13), (12, 13), 
+(12, 14), (13, 14), (13, 15), (14, 15), (14, 45), 
+(15, 16), (15, 17), (16, 17), (16, 18), (17, 18), 
+(17, 19), (18, 20), (19, 20), (19, 21), (20, 21), 
+(20, 22), (21, 22), (21, 23), (22, 23), (23, 25), 
+(24, 25), (24, 26), (25, 26), (25, 27), (26, 27), 
+(26, 28), (27, 28), (27, 31), (28, 29), (28, 30), 
+(29, 30), (29, 31), (30, 31), (30, 32), (31, 32), 
+(31, 33), (32, 33), (32, 34), (33, 34), (33, 35), 
+(34, 35), (34, 36), (35, 36), (35, 37), (36, 37), 
+(36, 38), (37, 38), (37, 39), (38, 39), (38, 40), 
+(39, 40), (39, 41), (39, 48), (40, 41), (40, 42), 
+(41, 42), (41, 43), (42, 43), (42, 44), (43, 44), 
+(43, 45), (44, 45), (44, 46), (45, 46), (45, 47), 
+(46, 47), (46, 48), (47, 48), (47, 49), (48, 49), 
+
+
+Total i-node graphlets:
+
+There are: 100 total 2-node graphlets.
+There are: 232 total 3-node graphlets.
+There are: 596 total 4-node graphlets.
+
+
+Graphlet Frequency:
+
+Graphlet 0 has frequency 100.
+Graphlet 1 has frequency 194.
+Graphlet 2 has frequency 38.
+Graphlet 3 has frequency 398.
+Graphlet 4 has frequency 45.
+Graphlet 5 has frequency 5.
+Graphlet 6 has frequency 118.
+Graphlet 7 has frequency 30.
+
+
+Node Orbits:
+
+Node 0 takes part in 69 orbits: 
+0 0 0 0 1 2 1 2 1 2 1 1 1 2 1 1 3 3 4 4 
+5 4 5 5 5 4 4 5 4 5 5 5 5 5 4 4 4 4 5 5 
+5 4 4 4 4 5 5 4 5 5 5 4 4 4 4 6 7 6 11 10 
+10 11 10 10 9 9 9 12 13 
+Node 1 takes part in 64 orbits: 
+0 0 0 0 2 1 1 2 1 1 1 2 1 1 3 3 3 5 5 5 
+5 4 4 4 4 4 4 4 5 5 5 4 4 5 4 4 5 4 4 4 
+5 5 5 4 4 4 4 6 6 10 10 11 10 10 10 10 10 10 10 11 
+9 9 13 13 
+Node 2 takes part in 84 orbits: 
+0 0 0 0 2 1 2 1 2 1 1 1 1 2 1 1 1 1 3 3 
+5 5 5 5 5 4 4 4 5 5 5 5 5 5 4 4 5 5 5 5 
+5 4 4 4 4 5 4 5 4 4 4 4 5 5 5 5 5 4 4 4 
+4 4 4 4 7 6 6 6 6 6 6 6 10 11 10 10 10 11 10 9 
+9 9 13 12 
+Node 3 takes part in 114 orbits: 
+0 0 0 0 0 1 1 2 2 2 1 2 2 2 1 1 1 2 1 2 
+1 1 1 1 3 3 5 5 4 5 5 5 4 5 4 4 5 5 5 5 
+5 5 5 5 5 5 4 4 5 5 5 5 5 5 5 5 5 5 4 4 
+4 4 4 4 5 4 4 4 5 5 5 5 4 4 4 5 5 5 5 5 
+4 4 4 4 4 4 4 4 4 4 6 7 7 7 7 6 6 6 6 9 
+11 11 11 10 10 11 11 10 10 10 11 10 9 12 
+Node 4 takes part in 83 orbits: 
+0 0 0 0 1 1 2 2 1 2 1 2 1 1 1 2 1 1 1 3 
+4 4 5 5 4 5 5 4 5 5 5 5 5 5 5 4 4 4 5 5 
+4 4 5 5 5 5 5 4 4 4 4 4 5 4 5 4 5 5 5 4 
+4 4 4 4 4 6 6 7 7 6 6 6 8 9 10 10 11 10 11 10 
+10 9 9 
+Node 5 takes part in 96 orbits: 
+0 0 0 0 1 1 2 1 2 1 2 1 2 1 1 1 2 1 1 1 
+1 3 4 4 5 5 4 5 4 5 5 5 5 5 4 4 4 5 5 5 
+5 5 4 5 5 5 5 4 4 4 5 5 5 5 5 5 4 5 4 4 
+4 5 5 5 5 5 4 4 4 4 4 4 4 6 6 7 6 7 6 6 
+6 6 6 8 9 10 10 10 11 10 10 11 9 9 9 9 
+Node 6 takes part in 50 orbits: 
+0 0 0 1 1 2 2 1 1 1 1 1 3 4 4 5 5 4 4 5 
+4 5 5 5 5 5 4 4 4 4 4 4 4 4 4 4 4 4 4 6 
+6 6 6 8 9 11 10 10 10 10 
+Node 7 takes part in 68 orbits: 
+0 0 0 0 1 1 1 2 2 2 1 2 2 1 1 1 1 3 4 4 
+4 5 5 5 4 5 5 4 5 4 5 5 5 5 5 5 5 4 4 4 
+4 5 5 5 5 4 4 4 4 4 4 4 4 4 6 6 7 7 6 8 
+8 9 10 11 11 10 10 9 
+Node 8 takes part in 80 orbits: 
+0 0 0 0 1 1 2 2 1 2 2 1 1 1 2 1 1 1 1 3 
+4 4 4 4 5 4 5 5 4 5 5 5 5 5 5 5 5 4 5 5 
+5 5 5 5 5 5 4 5 4 4 5 5 5 5 5 4 4 4 4 4 
+4 4 6 7 7 6 6 6 6 8 10 10 10 11 11 9 9 9 9 9 
+Node 9 takes part in 43 orbits: 
+0 0 0 1 1 1 2 2 1 1 1 1 3 4 4 4 5 5 4 5 
+5 4 5 4 5 5 5 4 4 4 4 4 4 6 6 6 8 9 11 10 
+10 9 12 
+Node 10 takes part in 57 orbits: 
+0 0 0 0 1 1 1 2 2 2 1 2 1 1 1 3 3 4 4 4 
+4 5 5 5 5 5 5 5 5 5 5 5 5 4 4 4 4 5 5 4 
+4 4 4 4 6 6 7 8 9 10 11 11 10 10 9 13 12 
+Node 11 takes part in 45 orbits: 
+0 0 0 0 1 1 2 2 2 1 1 1 3 3 3 4 4 4 4 4 
+5 5 5 4 5 5 5 5 5 4 4 4 4 4 10 10 10 11 11 10 
+10 9 13 13 12 
+Node 12 takes part in 51 orbits: 
+0 0 0 0 1 1 1 2 2 2 1 1 1 3 3 3 4 4 4 4 
+5 5 4 5 5 5 5 5 5 5 5 4 4 4 4 4 4 4 4 6 
+6 10 10 11 11 10 10 12 13 13 12 
+Node 13 takes part in 50 orbits: 
+0 0 0 0 1 1 1 2 2 2 1 1 1 3 3 3 4 4 4 4 
+5 5 5 5 5 5 5 5 5 5 4 4 4 4 4 4 4 9 10 10 
+11 11 10 10 10 10 9 12 13 13 
+Node 14 takes part in 71 orbits: 
+0 0 0 0 1 1 1 2 2 2 1 1 2 1 1 1 1 3 3 4 
+4 4 4 4 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 4 
+5 4 4 5 5 5 5 5 4 4 4 4 4 4 7 6 6 6 9 10 
+10 11 10 10 11 9 9 9 9 12 13 
+Node 15 takes part in 58 orbits: 
+0 0 0 0 1 1 1 2 2 2 2 1 1 1 1 3 3 4 4 4 
+4 4 4 4 5 5 5 5 5 5 5 5 5 5 5 5 5 5 4 4 
+4 4 4 4 4 4 6 6 9 10 11 11 10 11 11 10 12 12 
+Node 16 takes part in 36 orbits: 
+0 0 0 1 1 1 2 1 1 3 3 4 4 4 5 4 4 4 5 5 
+4 5 4 4 4 4 4 6 10 9 10 10 10 10 10 13 
+Node 17 takes part in 52 orbits: 
+0 0 0 0 1 1 1 2 2 2 2 1 1 1 3 3 4 4 4 5 
+5 4 4 4 5 5 5 5 4 5 5 5 5 5 5 4 4 4 4 4 
+6 7 8 10 9 10 10 11 11 10 9 13 
+Node 18 takes part in 70 orbits: 
+0 0 0 0 1 1 1 2 2 2 1 1 2 1 2 1 1 1 3 4 
+4 4 5 5 5 4 4 5 5 5 4 4 4 5 5 5 5 5 5 5 
+5 5 4 4 4 4 5 5 5 5 5 4 5 5 4 4 6 6 7 7 
+6 6 8 9 11 10 11 9 9 12 
+Node 19 takes part in 41 orbits: 
+0 0 0 1 1 1 2 2 1 1 1 1 3 4 4 4 4 4 4 4 
+5 5 5 5 4 5 5 5 5 4 4 6 6 8 9 9 11 10 10 9 
+12 
+Node 20 takes part in 58 orbits: 
+0 0 0 0 1 1 1 1 1 2 2 2 2 1 1 3 3 4 4 5 
+5 4 4 4 4 4 4 5 5 5 4 4 4 4 5 5 5 5 5 5 
+5 5 5 4 4 6 6 6 7 8 10 9 10 11 11 10 13 12 
+Node 21 takes part in 51 orbits: 
+0 0 0 0 1 1 1 1 2 2 2 1 3 3 3 4 4 5 4 4 
+4 4 4 5 5 4 4 4 4 4 4 5 5 5 5 5 4 4 4 6 
+10 10 10 10 10 10 11 11 10 13 13 
+Node 22 takes part in 67 orbits: 
+0 0 0 0 1 1 2 2 2 1 1 1 1 1 2 1 3 3 4 5 
+5 5 4 5 5 5 4 5 5 5 5 5 5 5 5 4 4 4 4 4 
+4 5 4 4 4 4 4 5 5 5 4 4 4 6 7 6 6 9 9 11 
+11 10 10 10 10 12 13 
+Node 23 takes part in 86 orbits: 
+0 0 0 0 1 1 1 1 1 2 2 2 1 1 1 2 2 1 1 1 
+3 4 4 4 4 5 5 4 5 5 5 4 5 5 5 4 4 4 5 5 
+5 4 5 5 5 4 5 5 5 5 5 5 4 4 4 4 5 5 5 5 
+5 5 5 5 5 4 4 4 6 6 6 6 6 7 7 6 10 9 9 11 
+9 10 11 9 9 12 
+Node 24 takes part in 21 orbits: 
+0 0 1 1 1 1 3 4 4 4 4 4 4 4 4 4 6 10 10 9 
+12 
+Node 25 takes part in 59 orbits: 
+0 0 0 0 1 1 1 2 2 2 2 1 1 1 3 3 4 4 4 4 
+4 4 4 5 5 5 4 4 4 5 5 5 5 5 5 5 5 5 5 5 
+4 4 4 4 4 4 4 4 6 6 7 6 9 11 11 10 10 13 12 
+Node 26 takes part in 50 orbits: 
+0 0 0 0 1 1 2 2 2 1 1 1 3 3 3 4 4 4 5 5 
+4 4 4 5 5 5 5 5 5 4 4 4 4 4 4 4 6 6 10 10 
+10 11 11 10 10 10 10 9 13 13 
+Node 27 takes part in 71 orbits: 
+0 0 0 0 1 1 1 1 2 2 2 1 1 2 1 1 1 1 3 3 
+4 4 4 5 5 4 4 4 5 5 5 5 5 5 5 5 5 5 5 5 
+5 5 5 4 5 5 4 4 4 6 6 6 7 6 6 6 8 8 10 10 
+10 11 10 10 11 9 9 9 9 12 13 
+Node 28 takes part in 93 orbits: 
+0 0 0 0 0 1 1 1 2 2 2 2 1 1 1 2 2 2 2 1 
+1 1 1 3 3 4 5 5 5 5 4 5 5 5 5 4 4 4 4 5 
+5 5 5 5 5 5 5 5 5 5 4 4 4 5 5 5 5 5 5 5 
+5 5 5 4 4 4 4 4 4 4 6 7 7 7 7 6 8 8 9 9 
+11 11 9 10 11 11 10 11 11 10 9 12 12 
+Node 29 takes part in 45 orbits: 
+0 0 0 1 1 1 1 2 1 1 1 3 3 4 4 4 5 4 4 4 
+4 4 5 5 5 4 4 4 4 4 6 6 6 6 8 10 9 10 10 10 
+10 10 9 13 12 
+Node 30 takes part in 58 orbits: 
+0 0 0 0 1 1 1 1 2 2 2 1 1 1 3 3 3 4 4 4 
+5 5 4 4 4 4 4 5 5 5 5 5 5 5 5 4 4 4 4 4 
+6 6 6 8 10 9 10 10 10 10 11 11 10 10 9 13 13 12 
+Node 31 takes part in 78 orbits: 
+0 0 0 0 0 1 1 1 2 2 2 2 1 1 2 2 2 1 1 1 
+3 3 3 4 4 4 4 4 4 5 5 5 5 5 5 5 5 4 4 5 
+5 5 5 5 5 5 5 5 5 5 5 5 4 4 4 4 4 6 7 7 
+7 8 8 9 9 11 11 11 10 11 11 10 10 9 12 13 13 12 
+Node 32 takes part in 55 orbits: 
+0 0 0 0 1 1 1 1 2 2 2 1 1 1 3 3 3 4 4 4 
+4 4 4 5 4 5 5 5 5 5 5 5 5 5 5 4 4 4 4 4 
+6 10 10 9 10 10 11 11 10 10 9 12 13 13 12 
+Node 33 takes part in 57 orbits: 
+0 0 0 0 1 1 1 1 2 2 2 1 1 1 3 3 3 4 4 4 
+4 5 5 4 4 4 4 5 5 5 5 5 5 5 5 5 5 4 4 4 
+4 4 6 6 10 9 10 10 11 11 10 10 9 12 13 13 12 
+Node 34 takes part in 52 orbits: 
+0 0 0 0 1 1 1 2 2 2 1 1 1 3 3 3 4 4 4 4 
+4 4 4 4 4 5 5 5 5 5 5 5 5 5 5 4 4 4 4 4 
+9 10 10 11 11 10 10 9 12 13 13 12 
+Node 35 takes part in 59 orbits: 
+0 0 0 0 1 1 1 1 2 2 2 1 1 1 3 3 3 4 4 4 
+5 5 4 4 4 4 4 4 5 5 5 5 5 5 5 5 5 5 4 4 
+4 4 4 4 6 6 10 9 10 10 11 11 10 10 9 12 13 13 12 
+Node 36 takes part in 59 orbits: 
+0 0 0 0 1 1 1 1 2 2 2 1 1 1 3 3 3 4 4 4 
+5 4 4 4 4 4 4 5 5 5 5 5 5 5 5 5 5 4 4 4 
+4 4 4 4 6 10 10 9 10 10 11 11 10 10 9 12 13 13 12 
+Node 37 takes part in 103 orbits: 
+0 0 0 0 0 1 1 1 2 2 2 2 1 1 1 2 2 2 1 1 
+1 1 3 3 3 4 4 4 5 5 5 5 4 4 5 5 5 5 4 4 
+4 5 5 5 5 5 5 5 5 5 5 5 4 4 4 4 4 4 4 5 
+5 5 5 5 5 5 5 5 5 5 5 4 4 4 4 4 4 4 4 6 
+6 7 7 7 6 6 9 11 11 11 9 10 10 11 11 10 10 10 9 12 
+13 13 12 
+Node 38 takes part in 73 orbits: 
+0 0 0 0 1 1 1 1 1 2 2 2 1 1 1 1 3 3 3 4 
+4 4 5 4 4 4 5 5 4 4 4 4 4 5 5 5 5 5 5 5 
+5 5 5 5 4 4 4 4 4 4 4 4 6 6 6 6 10 10 10 9 
+10 10 11 11 10 10 10 10 9 12 13 13 12 
+Node 39 takes part in 107 orbits: 
+0 0 0 0 0 1 1 1 1 1 2 2 2 2 2 1 2 1 1 2 
+1 1 1 3 3 3 4 4 4 4 4 5 5 5 4 4 4 5 5 4 
+4 4 4 4 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
+5 5 5 4 4 5 5 5 5 4 5 4 4 5 5 5 5 4 4 4 
+6 6 6 7 7 7 6 10 10 10 9 10 10 11 11 11 10 11 10 11 
+9 9 9 12 13 13 12 
+Node 40 takes part in 100 orbits: 
+0 0 0 0 0 1 1 1 2 2 2 2 1 1 1 2 2 2 1 1 
+1 1 3 3 3 4 4 4 4 5 5 5 5 4 5 5 5 5 4 4 
+4 5 5 5 5 5 5 5 5 5 5 5 4 4 4 4 4 5 5 5 
+5 5 5 5 5 5 5 5 4 4 4 4 4 4 4 4 6 6 7 7 
+7 6 9 11 11 11 9 10 10 11 10 11 10 10 10 9 12 13 13 12 
+Node 41 takes part in 67 orbits: 
+0 0 0 0 1 1 1 1 2 2 1 2 1 1 1 3 3 3 4 4 
+4 4 5 4 4 4 4 4 4 5 5 5 5 5 5 5 5 5 5 4 
+4 4 5 5 4 4 4 4 4 6 6 6 10 10 9 10 10 11 10 11 
+10 10 9 12 13 13 12 
+Node 42 takes part in 61 orbits: 
+0 0 0 0 1 1 1 1 2 2 2 1 1 1 3 3 3 4 4 4 
+5 5 4 4 4 4 4 4 4 5 5 5 5 4 5 4 5 5 5 5 
+5 4 4 4 4 4 6 6 10 9 10 10 11 11 10 10 9 12 13 13 
+12 
+Node 43 takes part in 60 orbits: 
+0 0 0 0 1 1 1 1 2 2 2 1 1 1 3 3 3 4 4 4 
+4 4 5 5 4 4 4 4 4 5 5 4 5 5 5 5 5 5 5 5 
+4 4 4 4 4 6 6 10 9 10 10 11 11 10 10 9 12 13 13 12 
+Node 44 takes part in 57 orbits: 
+0 0 0 0 1 1 1 1 2 2 2 1 1 1 3 3 3 4 4 4 
+4 5 4 4 4 4 4 4 5 5 5 5 5 5 5 5 5 5 4 4 
+4 4 6 10 10 9 10 10 11 11 10 10 9 12 13 13 12 
+Node 45 takes part in 88 orbits: 
+0 0 0 0 0 1 1 1 2 2 2 2 1 1 1 2 2 2 1 1 
+1 3 3 3 4 4 4 4 4 5 5 5 5 5 5 5 5 4 4 5 
+5 5 5 5 5 5 5 5 5 4 4 4 4 4 4 4 5 5 5 5 
+5 5 5 5 5 5 4 6 7 7 7 9 9 11 11 11 9 10 10 11 
+11 10 10 9 12 13 13 12 
+Node 46 takes part in 59 orbits: 
+0 0 0 0 1 1 1 1 1 2 2 2 1 1 3 3 3 4 4 4 
+4 4 4 4 5 4 4 4 4 5 5 4 4 4 4 4 5 5 5 5 
+5 5 5 5 6 6 10 10 10 9 10 10 11 11 10 12 13 13 12 
+Node 47 takes part in 61 orbits: 
+0 0 0 0 1 1 1 1 1 1 1 2 2 2 3 3 3 4 4 5 
+5 4 4 5 5 4 4 4 5 5 4 4 4 4 5 4 4 4 4 4 
+5 5 5 5 5 6 6 9 10 10 10 10 10 9 10 10 11 11 12 13 
+13 
+Node 48 takes part in 76 orbits: 
+0 0 0 0 1 1 1 1 1 1 2 2 2 1 1 1 2 3 3 4 
+4 5 5 4 4 5 5 4 4 4 4 4 4 4 5 5 5 5 5 5 
+4 5 5 5 4 4 5 5 5 5 5 5 4 4 4 4 4 5 5 6 
+6 6 7 9 10 10 9 9 9 11 11 9 10 10 12 13 
+Node 49 takes part in 67 orbits: 
+0 0 0 0 1 1 2 2 1 1 2 2 1 1 1 1 3 3 4 4 
+5 5 4 4 4 5 5 5 5 5 5 4 5 5 4 4 4 5 5 5 
+5 5 5 4 4 4 4 4 4 4 4 4 4 6 6 10 10 11 11 11 
+9 11 10 9 10 12 12 
+
+
+Node Richness:
+
+The richness of node 0 is 13.
+The richness of node 1 is 11.
+The richness of node 2 is 13.
+The richness of node 3 is 12.
+The richness of node 4 is 12.
+The richness of node 5 is 12.
+The richness of node 6 is 11.
+The richness of node 7 is 12.
+The richness of node 8 is 12.
+The richness of node 9 is 12.
+The richness of node 10 is 14.
+The richness of node 11 is 11.
+The richness of node 12 is 11.
+The richness of node 13 is 11.
+The richness of node 14 is 13.
+The richness of node 15 is 11.
+The richness of node 16 is 10.
+The richness of node 17 is 13.
+The richness of node 18 is 13.
+The richness of node 19 is 12.
+The richness of node 20 is 14.
+The richness of node 21 is 10.
+The richness of node 22 is 13.
+The richness of node 23 is 12.
+The richness of node 24 is 8.
+The richness of node 25 is 13.
+The richness of node 26 is 11.
+The richness of node 27 is 14.
+The richness of node 28 is 13.
+The richness of node 29 is 12.
+The richness of node 30 is 13.
+The richness of node 31 is 14.
+The richness of node 32 is 12.
+The richness of node 33 is 12.
+The richness of node 34 is 11.
+The richness of node 35 is 12.
+The richness of node 36 is 12.
+The richness of node 37 is 13.
+The richness of node 38 is 12.
+The richness of node 39 is 13.
+The richness of node 40 is 13.
+The richness of node 41 is 12.
+The richness of node 42 is 12.
+The richness of node 43 is 12.
+The richness of node 44 is 12.
+The richness of node 45 is 13.
+The richness of node 46 is 12.
+The richness of node 47 is 12.
+The richness of node 48 is 13.
+The richness of node 49 is 11.
+
+
+Node Diversity:
+
+The diversity of node 0 is 1.4414391370085198.
+The diversity of node 1 is 1.2960738540032177.
+The diversity of node 2 is 1.645316609737622.
+The diversity of node 3 is 1.9805481757257803.
+The diversity of node 4 is 1.6797489517636448.
+The diversity of node 5 is 1.8492230070829554.
+The diversity of node 6 is 1.0965662190035406.
+The diversity of node 7 is 1.604783134230792.
+The diversity of node 8 is 1.6850491016656157.
+The diversity of node 9 is 1.1342436613025957.
+The diversity of node 10 is 1.5391758718518807.
+The diversity of node 11 is 1.1148162573426905.
+The diversity of node 12 is 1.2298525393932431.
+The diversity of node 13 is 1.1978130685031678.
+The diversity of node 14 is 1.5311446317682158.
+The diversity of node 15 is 1.2031587637009604.
+The diversity of node 16 is 0.7867808781315085.
+The diversity of node 17 is 1.3942715791979199.
+The diversity of node 18 is 1.6182595405083735.
+The diversity of node 19 is 1.1253096294608016.
+The diversity of node 20 is 1.5353889236717118.
+The diversity of node 21 is 1.0711236706822695.
+The diversity of node 22 is 1.4283600093424975.
+The diversity of node 23 is 1.6013036701448649.
+The diversity of node 24 is 0.5350564824536839.
+The diversity of node 25 is 1.3071685179214543.
+The diversity of node 26 is 1.1507059516444087.
+The diversity of node 27 is 1.9084553743888122.
+The diversity of node 28 is 2.208756952183453.
+The diversity of node 29 is 1.2700268017375982.
+The diversity of node 30 is 1.574876805155745.
+The diversity of node 31 is 2.175035374589266.
+The diversity of node 32 is 1.33873971183687.
+The diversity of node 33 is 1.3710552407024055.
+The diversity of node 34 is 1.2451085566173958.
+The diversity of node 35 is 1.3820798721632015.
+The diversity of node 36 is 1.3608076119509762.
+The diversity of node 37 is 2.0939633279607457.
+The diversity of node 38 is 1.5577821580279483.
+The diversity of node 39 is 2.165862194548519.
+The diversity of node 40 is 2.068971399500729.
+The diversity of node 41 is 1.4791409304441163.
+The diversity of node 42 is 1.3926197463767183.
+The diversity of node 43 is 1.3874064846690701.
+The diversity of node 44 is 1.3500334685465871.
+The diversity of node 45 is 1.9463544559462755.
+The diversity of node 46 is 1.3570353224838168.
+The diversity of node 47 is 1.3550180910646792.
+The diversity of node 48 is 1.557244467517081.
+The diversity of node 49 is 1.3065713055942132.
+
+
+Global Richness Proportion:
+
+The number of nodes with a richness of 8 is 0.02.
+The number of nodes with a richness of 10 is 0.04.
+The number of nodes with a richness of 11 is 0.18.
+The number of nodes with a richness of 12 is 0.4.
+The number of nodes with a richness of 13 is 0.28.
+The number of nodes with a richness of 14 is 0.08.
+
+
+The Orbit Distribution Information measure of Watts_Strogatz_graph is 3.160348143031549.
+
+
+The Vertex Degree Information measure of Watts_Strogatz_graph is 403.0419208318749.
+
+
+The Frequency Degree Information measure of Watts_Strogatz_graph is 2.3217006262146103.
+
+
+The Complexity B of Watts_Strogatz_graph is 1.0572689768523653
+
+
+The Graph-Distance Complexity of Watts_Strogatz_graph is 4.914203219755864.
+
+
+The Total Walk Count of length 3 or less is 4344.0.
+
+
